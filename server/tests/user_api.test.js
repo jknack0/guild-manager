@@ -29,7 +29,7 @@ describe('User api tests', () => {
       .send(newUser)
       .expect(200)
       .expect('Content-Type', /application\/json/)
-
+  
     const usersAtEnd = await User.find({})
     expect(usersAtEnd).toHaveLength(usersAtBeggining.length + 1)
   })
