@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { registerUser } from '../../reducers/userReducer'
+import { registerUser } from '../../../reducers/userReducer'
 import {
   RegisterFormContainer,
   RegisterHeading,
@@ -26,6 +26,7 @@ const Register = () => {
       characterName,
       realm
     }
+    
     setUsername('')
     setPassword('')
     setRealm('')
@@ -40,16 +41,16 @@ const Register = () => {
       </RegisterHeading>
       <RegisterForm onSubmit={handleRegisterUser}>
         <FormItem>
-          Username: <FormInput value={username} onChange={({target}) => setUsername(target.value)} />
+          Username: <FormInput type='text' value={username} onChange={({target}) => setUsername(target.value)} />
         </FormItem>
         <FormItem>
-          Password: <FormInput value={password} onChange={({target}) => setPassword(target.value)} />
+          Password: <FormInput type='password' value={password} onChange={({target}) => setPassword(target.value)} />
         </FormItem>
         <FormItem>
-          Character Name: <FormInput value={characterName} onChange={({target}) => setCharacterName(target.value)} />
+          Character Name: <FormInput type='text' value={characterName} onChange={({target}) => setCharacterName(target.value)} />
         </FormItem>
         <FormItem>
-          Character Realm: <FormInput value={realm} onChange={({target}) => setRealm(target.value)} />
+          Character Realm: <FormInput type='text' value={realm} onChange={({target}) => setRealm(target.value)} />
         </FormItem>
         <SubmitButton>
           Submit
